@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { upload } from 'lucide-react';
+import { Upload } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface PhotoUploadProps {
@@ -58,7 +58,7 @@ export const PhotoUpload = ({ onImageUpload }: PhotoUploadProps) => {
               asChild
             >
               <span className="cursor-pointer flex items-center gap-2">
-                <upload size={16} />
+                <Upload size={16} />
                 {isUploading ? 'Uploading...' : 'Upload Photo'}
               </span>
             </Button>
