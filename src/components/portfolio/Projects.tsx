@@ -21,7 +21,7 @@ export const Projects = () => {
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       tags: ["PHP", "MySQL", "JavaScript", "Export Features"],
       features: ["📍 For small businesses", "📍 Customer balance summaries", "📍 Export features"],
-      githubUrl: "https://github.com/haqgroup125/khata-ledger-app",
+      githubUrl: "https://github.com/haqgroup125/debt_khata/tree/main/debt_khata1",
       demoUrl: "#"
     },
     {
@@ -30,7 +30,7 @@ export const Projects = () => {
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       tags: ["PHP", "JavaScript", "Real-time Chat", "Rating System"],
       features: ["📍 Skill exchange between students", "📍 Live chat", "📍 Rating & proximity features"],
-      githubUrl: "https://github.com/haqgroup125/skill-swap-marketplace",
+      githubUrl: "https://github.com/haqgroup125/skill_swap_working",
       demoUrl: "#"
     },
     {
@@ -43,12 +43,12 @@ export const Projects = () => {
       demoUrl: "#"
     },
     {
-      title: "Cybersecurity Lab Project",
-      description: "Comprehensive security testing lab environment with vulnerability demonstrations, penetration testing tools, and educational resources for ethical hacking practices.",
+      title: "Lab Watch Security Network",
+      description: "Comprehensive security monitoring and network analysis tool designed for cybersecurity labs. Features real-time threat detection, network traffic analysis, and security incident response capabilities.",
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-      tags: ["Cybersecurity", "Penetration Testing", "Vulnerability Assessment", "Educational"],
-      features: ["📍 Security testing environment", "📍 Vulnerability demonstrations", "📍 Educational resources"],
-      githubUrl: "https://github.com/haqgroup125/cybersecurity-lab",
+      tags: ["Cybersecurity", "Network Security", "Threat Detection", "Real-time Monitoring"],
+      features: ["📍 Real-time threat detection", "📍 Network traffic analysis", "📍 Security incident response"],
+      githubUrl: "https://github.com/haqgroup125/lab-watch-security-net",
       demoUrl: "#"
     }
   ];
