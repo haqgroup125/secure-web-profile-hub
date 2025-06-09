@@ -1,7 +1,6 @@
-
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Download, Mail, Phone, MapPin, Github, Linkedin, Shield, Code, Award, Calendar } from 'lucide-react';
+import { Download, Mail, Phone, MapPin, Github, Linkedin, Shield, Code, Award, Calendar, User, Briefcase } from 'lucide-react';
 
 export const CV = () => {
   const handleDownload = () => {
@@ -204,7 +203,7 @@ export const CV = () => {
       </div>
 
       {/* Print Styles */}
-      <style jsx>{`
+      <style>{`
         @media print {
           .no-print {
             display: none !important;
