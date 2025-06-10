@@ -54,21 +54,21 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-12 sm:py-16 lg:py-24 px-2 sm:px-4 bg-white">
+    <section id="projects" className="py-8 sm:py-12 lg:py-16 px-4 bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
             Featured Projects
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Real-world applications focusing on security, user experience, and modern web technologies
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto px-2 sm:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card key={index} className="group overflow-hidden hover:shadow-lg transition-all duration-300 bg-white border border-slate-200 shadow-sm rounded-xl">
-              <div className="relative h-40 sm:h-48 lg:h-56 overflow-hidden rounded-t-xl">
+              <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden rounded-t-xl">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -77,53 +77,53 @@ export const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60" />
               </div>
               
-              <div className="p-4 sm:p-5 lg:p-6">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mb-2 sm:mb-3 line-clamp-2">
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 mb-2 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <p className="text-sm lg:text-base text-slate-600 mb-3 sm:mb-4 line-clamp-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 mb-3 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
                 
-                <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
+                <div className="space-y-1 mb-4">
                   {project.features.map((feature, idx) => (
-                    <p key={idx} className="text-xs lg:text-sm text-slate-500 flex items-start leading-relaxed">
+                    <p key={idx} className="text-xs text-slate-500 flex items-start leading-relaxed">
                       {feature}
                     </p>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge 
                       key={tagIndex} 
                       variant="secondary" 
-                      className="text-xs px-2 sm:px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition-all duration-300"
+                      className="text-xs px-2 py-1 bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition-all duration-300"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button 
                     size="sm" 
-                    className="flex-1 bg-slate-900 hover:bg-slate-800 text-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg text-xs sm:text-sm"
+                    className="flex-1 bg-slate-900 hover:bg-slate-800 text-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg text-xs"
                     onClick={() => window.open(project.demoUrl, '_blank')}
                   >
-                    <ExternalLink size={14} className="mr-1 sm:mr-2 flex-shrink-0" />
-                    <span className="font-medium">View Demo</span>
+                    <ExternalLink size={12} className="mr-1 flex-shrink-0" />
+                    <span className="font-medium">Demo</span>
                   </Button>
                   
                   <Button 
                     size="sm" 
                     variant="outline" 
-                    className="flex-1 border-slate-300 text-slate-700 hover:bg-slate-50 transition-all duration-300 rounded-lg text-xs sm:text-sm"
+                    className="flex-1 border-slate-300 text-slate-700 hover:bg-slate-50 transition-all duration-300 rounded-lg text-xs"
                     onClick={() => window.open(project.githubUrl, '_blank')}
                   >
-                    <Github size={14} className="mr-1 sm:mr-2 flex-shrink-0" />
-                    <span className="font-medium">Source Code</span>
+                    <Github size={12} className="mr-1 flex-shrink-0" />
+                    <span className="font-medium">Code</span>
                   </Button>
                 </div>
               </div>
@@ -131,11 +131,11 @@ export const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 sm:mt-16">
-          <Card className="inline-block p-6 sm:p-8 lg:p-10 bg-white border border-slate-200 shadow-sm max-w-sm sm:max-w-md mx-auto rounded-2xl">
-            <div className="text-4xl sm:text-6xl mb-4 sm:mb-6">🔮</div>
-            <p className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">More Projects Coming Soon</p>
-            <p className="text-sm lg:text-base text-slate-600 leading-relaxed">Always working on exciting new projects and exploring cutting-edge technologies!</p>
+        <div className="text-center mt-8 sm:mt-12 lg:mt-16">
+          <Card className="inline-block p-6 sm:p-8 bg-white border border-slate-200 shadow-sm max-w-sm mx-auto rounded-2xl">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🔮</div>
+            <p className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mb-2">More Projects Coming Soon</p>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">Always working on exciting new projects and exploring cutting-edge technologies!</p>
           </Card>
         </div>
       </div>
