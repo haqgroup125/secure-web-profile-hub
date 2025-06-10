@@ -9,9 +9,8 @@ interface HeroProps {
 
 export const Hero = ({ profileImage }: HeroProps) => {
   const handleDownloadCV = () => {
-    // Create and trigger download of CV
     const link = document.createElement('a');
-    link.href = '/cv'; // This will open the CV page
+    link.href = '/cv';
     link.target = '_blank';
     link.click();
   };
@@ -25,26 +24,18 @@ export const Hero = ({ profileImage }: HeroProps) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full mix-blend-multiply filter blur-2xl opacity-25 animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="container mx-auto relative z-10 max-w-6xl">
-        <Card className="p-8 md:p-16 bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-2xl rounded-3xl hover:shadow-3xl transition-all duration-700">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="container mx-auto max-w-6xl">
+        <Card className="p-8 md:p-16 bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-3xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Profile Section */}
             <div className="flex flex-col items-center lg:items-start space-y-8">
-              <div className="relative group">
-                <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-2 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-                  <img
-                    src={profileImage}
-                    alt="Muhammad Abubakkar"
-                    className="w-full h-full rounded-full object-cover bg-white group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+              <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-2 shadow-xl">
+                <img
+                  src={profileImage}
+                  alt="Muhammad Abubakkar"
+                  className="w-full h-full rounded-full object-cover bg-white"
+                />
               </div>
             </div>
 
@@ -72,7 +63,7 @@ export const Hero = ({ profileImage }: HeroProps) => {
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Button 
                   onClick={handleDownloadCV}
-                  className="bg-gradient-to-r from-lime-400 to-lime-500 hover:from-lime-500 hover:to-lime-600 text-black font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
                   size="lg"
                 >
                   <Download className="w-5 h-5 mr-2" />
@@ -81,7 +72,7 @@ export const Hero = ({ profileImage }: HeroProps) => {
                 
                 <Button 
                   onClick={handleViewProjects}
-                  className="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
                   size="lg"
                 >
                   <Briefcase className="w-5 h-5 mr-2" />
@@ -90,7 +81,7 @@ export const Hero = ({ profileImage }: HeroProps) => {
                 
                 <Button 
                   onClick={handleContact}
-                  className="bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-500 hover:to-cyan-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
                   size="lg"
                 >
                   <Mail className="w-5 h-5 mr-2" />
@@ -99,7 +90,7 @@ export const Hero = ({ profileImage }: HeroProps) => {
                 
                 <Button 
                   variant="outline"
-                  className="border-2 border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="border-2 border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300"
                   size="lg"
                 >
                   <User className="w-5 h-5 mr-2" />

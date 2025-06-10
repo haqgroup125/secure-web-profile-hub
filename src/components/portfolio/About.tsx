@@ -1,6 +1,5 @@
 
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 
 export const About = () => {
   const achievements = [
@@ -11,7 +10,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 px-4 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -23,8 +22,8 @@ export const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-blue-200">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+          <Card className="p-8 bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-3xl">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">
               🔐 Cybersecurity / Ethical Hacking
             </h3>
             <div className="space-y-4">
@@ -36,17 +35,11 @@ export const About = () => {
                 <li>• OWASP Top 10 & Secure Coding Practices</li>
                 <li>• Red Team Tools & Methodologies</li>
               </ul>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Badge variant="secondary">Burp Suite</Badge>
-                <Badge variant="secondary">Nmap</Badge>
-                <Badge variant="secondary">Metasploit</Badge>
-                <Badge variant="secondary">Wireshark</Badge>
-              </div>
             </div>
           </Card>
 
-          <Card className="p-8 bg-gradient-to-br from-purple-50 to-white border-purple-200">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+          <Card className="p-8 bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-3xl">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">
               🌐 Web Development
             </h3>
             <div className="space-y-4">
@@ -74,7 +67,7 @@ export const About = () => {
           </Card>
         </div>
 
-        <Card className="mt-12 p-8 bg-gradient-to-r from-green-50 to-blue-50 border-green-200 max-w-4xl mx-auto">
+        <Card className="mt-12 p-8 bg-white/90 backdrop-blur-xl border border-gray-200/50 shadow-xl rounded-3xl max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">✅ Key Achievements</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {achievements.map((achievement, index) => (
