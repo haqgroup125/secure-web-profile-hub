@@ -2,7 +2,7 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Star, Code, Zap } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 export const Projects = () => {
   const projects = [
@@ -54,21 +54,21 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-8 sm:py-12 lg:py-16 px-4 bg-white">
-      <div className="container mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+    <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Featured Projects
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
             Real-world applications focusing on security, user experience, and modern web technologies
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="group overflow-hidden hover:shadow-lg transition-all duration-300 bg-white border border-slate-200 shadow-sm rounded-xl">
-              <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden rounded-t-xl">
+            <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl">
+              <div className="relative h-48 overflow-hidden rounded-t-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -77,53 +77,53 @@ export const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60" />
               </div>
               
-              <div className="p-4 sm:p-5">
-                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 mb-2 line-clamp-2">
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
                   {project.title}
                 </h3>
                 
-                <p className="text-xs sm:text-sm text-slate-600 mb-3 line-clamp-3 leading-relaxed">
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3 leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="space-y-1 mb-4">
                   {project.features.map((feature, idx) => (
-                    <p key={idx} className="text-xs text-slate-500 flex items-start leading-relaxed">
+                    <p key={idx} className="text-xs text-gray-500 flex items-start leading-relaxed">
                       {feature}
                     </p>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge 
                       key={tagIndex} 
                       variant="secondary" 
-                      className="text-xs px-2 py-1 bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition-all duration-300"
+                      className="text-xs px-3 py-1 bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200 transition-all duration-300"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex gap-3">
                   <Button 
                     size="sm" 
-                    className="flex-1 bg-slate-900 hover:bg-slate-800 text-white shadow-sm hover:shadow-md transition-all duration-300 rounded-lg text-xs"
+                    className="flex-1 bg-gray-900 hover:bg-gray-800 text-white shadow-sm hover:shadow-md transition-all duration-300 rounded-full"
                     onClick={() => window.open(project.demoUrl, '_blank')}
                   >
-                    <ExternalLink size={12} className="mr-1 flex-shrink-0" />
-                    <span className="font-medium">Demo</span>
+                    <ExternalLink size={14} className="mr-2" />
+                    Demo
                   </Button>
                   
                   <Button 
                     size="sm" 
                     variant="outline" 
-                    className="flex-1 border-slate-300 text-slate-700 hover:bg-slate-50 transition-all duration-300 rounded-lg text-xs"
+                    className="flex-1 border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 rounded-full"
                     onClick={() => window.open(project.githubUrl, '_blank')}
                   >
-                    <Github size={12} className="mr-1 flex-shrink-0" />
-                    <span className="font-medium">Code</span>
+                    <Github size={14} className="mr-2" />
+                    Code
                   </Button>
                 </div>
               </div>
@@ -131,11 +131,11 @@ export const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-12 lg:mt-16">
-          <Card className="inline-block p-6 sm:p-8 bg-white border border-slate-200 shadow-sm max-w-sm mx-auto rounded-2xl">
-            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🔮</div>
-            <p className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mb-2">More Projects Coming Soon</p>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">Always working on exciting new projects and exploring cutting-edge technologies!</p>
+        <div className="text-center mt-16">
+          <Card className="inline-block p-8 bg-white/95 backdrop-blur-md border border-white/20 shadow-xl max-w-md mx-auto rounded-2xl">
+            <div className="text-4xl mb-4">🔮</div>
+            <p className="text-xl font-bold text-gray-900 mb-3">More Projects Coming Soon</p>
+            <p className="text-sm text-gray-600 leading-relaxed">Always working on exciting new projects and exploring cutting-edge technologies!</p>
           </Card>
         </div>
       </div>
