@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Download, Mail, Github, User, Briefcase } from 'lucide-react';
+import { Download, Mail, Github, User, Briefcase, MapPin, Phone } from 'lucide-react';
 
 interface HeroProps {
   profileImage: string;
@@ -25,78 +25,103 @@ export const Hero = ({ profileImage }: HeroProps) => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <Card className="p-6 sm:p-8 md:p-16 bg-white border border-gray-200 shadow-lg rounded-lg">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Profile Section */}
-            <div className="flex flex-col items-center lg:items-start space-y-6 lg:space-y-8">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-2 shadow-xl">
-                <img
-                  src={profileImage}
-                  alt="Muhammad Abubakkar"
-                  className="w-full h-full rounded-full object-cover bg-white"
-                />
+      <div className="container mx-auto max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-6xl">
+        <Card className="p-6 sm:p-8 bg-white border border-gray-100 shadow-lg rounded-xl overflow-hidden">
+          {/* Mobile-First Layout */}
+          <div className="flex flex-col items-center text-center space-y-6">
+            {/* Profile Image */}
+            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-1 shadow-xl">
+              <img
+                src={profileImage}
+                alt="Muhammad Abubakkar"
+                className="w-full h-full rounded-full object-cover bg-white"
+              />
+            </div>
+
+            {/* Name and Title */}
+            <div className="space-y-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                Hello,
+              </h1>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+                I'm Muhammad Abubakkar
+              </h2>
+              <p className="text-lg sm:text-xl text-blue-600 font-semibold uppercase tracking-wide">
+                ETHICAL HACKER & WEB DEVELOPER
+              </p>
+            </div>
+
+            {/* Contact Info */}
+            <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-600">
+              <div className="flex items-center justify-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>abubakkar.work0@gmail.com</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <Github className="w-4 h-4" />
+                <span>github.com/haqgroup125</span>
               </div>
             </div>
 
-            {/* Content Section */}
-            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-              <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-gray-900 mb-3 lg:mb-4">
-                  Muhammad Abubakkar
-                </h1>
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-medium mb-4 lg:mb-6">
-                  Ethical Hacker & Web Developer
-                </p>
-              </div>
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
+              <Button 
+                onClick={handleDownloadCV}
+                className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-lg"
+              >
+                Hire Me
+              </Button>
+              
+              <Button 
+                onClick={handleDownloadCV}
+                variant="outline"
+                className="flex-1 border-gray-900 text-gray-900 hover:bg-gray-50 font-semibold py-3 rounded-lg"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+            </div>
 
-              <div className="space-y-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 lg:mb-4">A Bit About Me</h3>
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  I am an enthusiastic cybersecurity professional with 2.5+ years of experience in ethical hacking 
-                  and web development. I specialize in securing digital assets while building modern, 
-                  secure web applications using cutting-edge technologies.
-                </p>
-              </div>
+            {/* About Me Section */}
+            <div className="max-w-md space-y-3 pt-4">
+              <h3 className="text-lg font-bold text-gray-900">About Me</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                I am an enthusiastic cybersecurity professional with 2.5+ years of experience in ethical hacking 
+                and web development. I specialize in securing digital assets while building modern, 
+                secure web applications using cutting-edge technologies. I really like my work, if you don't 
+                I change this until you like it.
+              </p>
+            </div>
 
-              {/* Navigation Buttons */}
-              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
-                <Button 
-                  onClick={handleDownloadCV}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 sm:px-6 lg:px-8 py-3 lg:py-4 rounded-full shadow-lg transition-all duration-300 text-sm sm:text-base"
-                  size="sm"
-                >
-                  <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
-                  Resume
-                </Button>
-                
-                <Button 
-                  onClick={handleViewProjects}
-                  className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 sm:px-6 lg:px-8 py-3 lg:py-4 rounded-full shadow-lg transition-all duration-300 text-sm sm:text-base"
-                  size="sm"
-                >
-                  <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
-                  Research
-                </Button>
-                
-                <Button 
-                  onClick={handleContact}
-                  className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 sm:px-6 lg:px-8 py-3 lg:py-4 rounded-full shadow-lg transition-all duration-300 text-sm sm:text-base"
-                  size="sm"
-                >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
-                  Outreach
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  className="border-2 border-gray-400 text-gray-700 hover:bg-gray-100 font-semibold px-4 sm:px-6 lg:px-8 py-3 lg:py-4 rounded-full shadow-lg transition-all duration-300 text-sm sm:text-base col-span-2 sm:col-span-1"
-                  size="sm"
-                >
-                  <User className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
-                  Personal
-                </Button>
+            {/* Skills Tags */}
+            <div className="w-full max-w-md">
+              <h4 className="text-lg font-bold text-gray-900 mb-3">Other Skills:</h4>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {[
+                  "Penetration Testing", "OWASP Top 10", "Web Security", "PHP", 
+                  "JavaScript", "MySQL", "HTML5", "CSS3", "React.js"
+                ].map((skill, index) => (
+                  <span 
+                    key={index}
+                    className="px-3 py-1 bg-gray-900 text-white text-xs font-medium rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="bg-gray-50 rounded-lg p-4 w-full max-w-md">
+              <h4 className="font-bold text-gray-900 mb-2">
+                If You have any Unique idea for Project in your Mind
+              </h4>
+              <Button 
+                onClick={handleContact}
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-2 rounded-lg"
+              >
+                Contact Me
+              </Button>
             </div>
           </div>
         </Card>

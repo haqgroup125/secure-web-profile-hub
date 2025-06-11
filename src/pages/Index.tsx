@@ -10,12 +10,12 @@ const Index = () => {
   const profileImage = '/lovable-uploads/a661e938-71ff-4e2f-b5c3-5bcbdf3e00d7.png';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       <Header />
       <Hero profileImage={profileImage} />
-      <About />
       <Skills />
       <Projects />
+      <About />
       <Contact />
     </div>
   );
